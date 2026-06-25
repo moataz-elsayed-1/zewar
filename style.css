@@ -1,0 +1,633 @@
+/* ═══ RESET ═══════════════════════════════════════════ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+
+:root {
+  --blue: #5EC5FF;
+  --red: #FF2800;
+  --gold: #F5C518;
+  --muted: rgba(255, 255, 255, .32);
+  --dim: rgba(255, 255, 255, .08);
+}
+
+html {
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  background: #000
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  font-family: 'Barlow Condensed', sans-serif;
+  color: #fff;
+  cursor: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+@media(hover:none) {
+  body {
+    cursor: auto
+  }
+
+  #cDot,
+  #cRing {
+    display: none
+  }
+}
+
+/* ═══ SVG FILTERS ════════════════════════════════════ */
+.svg-filters {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden
+}
+
+/* ═══ VIDEO BACKGROUND ═══════════════════════════════ */
+#vLayer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(168deg, #040C1A 0%, #0B2040 38%, #0C0C0C 100%);
+}
+
+#bgVid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+#vOvr {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom,
+      rgba(0, 0, 0, .62) 0%, rgba(0, 0, 0, .08) 28%,
+      rgba(0, 0, 0, .08) 52%, rgba(0, 0, 0, .78) 75%,
+      rgba(0, 0, 0, .97) 100%),
+    radial-gradient(ellipse at center, transparent 25%, rgba(0, 0, 0, .45) 100%);
+}
+
+/* ═══ PARTICLES CANVAS ═══════════════════════════════ */
+#pCvs {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none
+}
+
+/* ═══ CURSOR ══════════════════════════════════════════ */
+#cDot {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 10px var(--blue);
+  transform: translate(-50%, -50%);
+}
+
+#cRing {
+  position: fixed;
+  z-index: 9998;
+  pointer-events: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(94, 197, 255, .46);
+  transform: translate(-50%, -50%);
+  transition: width .26s, height .26s, border-color .26s;
+}
+
+#cRing.on {
+  width: 54px;
+  height: 54px;
+  border-color: var(--red)
+}
+
+/* ═══ GHOST BG TEXT ══════════════════════════════════ */
+#ghost28 {
+  position: fixed;
+  z-index: 2;
+  bottom: -8%;
+  right: -2%;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(200px, 52vw, 520px);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(94, 197, 255, .038);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform;
+}
+
+/* ═══ BRAND ═══════════════════════════════════════════ */
+#brand {
+  position: fixed;
+  z-index: 10;
+  left: 50%;
+  top: 42%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.b-eye {
+  font-size: clamp(7px, 2.2vw, 10px);
+  letter-spacing: 3px;
+  color: var(--red);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: fadeUp .65s .5s ease forwards;
+}
+
+.b-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(72px, 22vw, 188px);
+  line-height: .83;
+  letter-spacing: 2px;
+  color: #fff;
+  opacity: 0;
+  animation: nameIn 1s .72s ease forwards, glitch 12s 5s infinite;
+  white-space: nowrap;
+}
+
+.b-name .b {
+  color: var(--blue)
+}
+
+@keyframes nameIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(.96)
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1)
+  }
+}
+
+@keyframes glitch {
+
+  0%,
+  88%,
+  100% {
+    clip-path: none;
+    transform: none
+  }
+
+  89% {
+    clip-path: polygon(0 18%, 100% 18%, 100% 40%, 0 40%);
+    transform: translateX(-4px)
+  }
+
+  91% {
+    clip-path: polygon(0 62%, 100% 62%, 100% 82%, 0 82%);
+    transform: translateX(4px)
+  }
+
+  93% {
+    clip-path: none
+  }
+}
+
+.b-wolf {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(12px, 4vw, 28px);
+  letter-spacing: 6px;
+  color: var(--muted);
+  margin-top: 6px;
+  opacity: 0;
+  animation: fadeUp .65s 1s ease forwards;
+}
+
+.b-ig {
+  font-size: clamp(10px, 3vw, 14px);
+  letter-spacing: 5px;
+  color: rgba(94, 197, 255, .42);
+  margin-top: 9px;
+  opacity: 0;
+  animation: fadeUp .65s 1.15s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px)
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+
+.b-scan {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(94, 197, 255, .08);
+  animation: bScan 6s 2s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes bScan {
+  from {
+    top: 0
+  }
+
+  to {
+    top: 100%
+  }
+}
+
+/* ═══ GALLERY STRIP ══════════════════════════════════ */
+#fWrap {
+  position: fixed;
+  z-index: 20;
+  left: 0;
+  right: 0;
+  bottom: clamp(120px, 22vw, 152px);
+  height: clamp(110px, 20vw, 148px);
+  overflow: hidden;
+}
+
+#fWrap::before,
+#fWrap::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Edge fades only — no 90s film strip */
+#fWrap::before {
+  top: 0;
+  height: 100%;
+  background: linear-gradient(to right,
+      rgba(0, 0, 0, .75) 0%, transparent 12%, transparent 88%, rgba(0, 0, 0, .75) 100%);
+}
+
+#fTrack {
+  display: flex;
+  gap: 8px;
+  padding: 8px 16px;
+  height: 100%;
+  align-items: center;
+  will-change: transform;
+  cursor: grab;
+}
+
+#fTrack:active {
+  cursor: grabbing
+}
+
+.fPh {
+  flex-shrink: 0;
+  width: clamp(68px, 12vw, 90px);
+  aspect-ratio: 3/4;
+  border: 1.5px solid rgba(255, 255, 255, .25);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: box-shadow .25s, border-color .25s;
+}
+
+.fPh:hover {
+  box-shadow: 0 0 24px rgba(94, 197, 255, .4);
+  border-color: rgba(94, 197, 255, .5);
+}
+
+.fImg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform .3s;
+}
+
+.fImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+.fPh:hover .fImg {
+  transform: scale(1.07)
+}
+
+#fSpot {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(to right,
+      rgba(0, 0, 0, .55) 0%, transparent 22%, transparent 78%, rgba(0, 0, 0, .55) 100%);
+}
+
+/* ═══ SOCIAL BUTTONS — Icon Only ════════════════════ */
+#socials {
+  position: fixed;
+  z-index: 30;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + clamp(60px, 12vw, 82px));
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  padding: 0 24px;
+  opacity: 0;
+  animation: fadeUp .65s 1.4s ease forwards;
+}
+
+.sBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, .1);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: transform .2s, box-shadow .25s, border-color .25s, background .25s;
+  position: relative;
+  overflow: hidden;
+}
+
+.sBtn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity .25s;
+}
+
+.sBtn:active {
+  transform: scale(.92)
+}
+
+/* Instagram */
+.sIg {
+  background: rgba(40, 10, 10, .35)
+}
+
+.sIg::before {
+  background: linear-gradient(135deg,
+      rgba(240, 148, 51, .18), rgba(230, 104, 60, .18),
+      rgba(220, 39, 67, .18), rgba(204, 35, 102, .18),
+      rgba(188, 24, 136, .18));
+}
+
+.sIg:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(188, 24, 136, .45), 0 0 0 1px rgba(220, 39, 67, .3);
+  border-color: rgba(220, 39, 67, .4);
+}
+
+.sIg:hover::before {
+  opacity: 1
+}
+
+/* TikTok */
+.sTt {
+  background: rgba(0, 0, 0, .4)
+}
+
+.sTt::before {
+  background: rgba(105, 201, 208, .07)
+}
+
+.sTt:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(105, 201, 208, .35), 0 0 0 1px rgba(105, 201, 208, .25);
+  border-color: rgba(105, 201, 208, .3);
+}
+
+.sTt:hover::before {
+  opacity: 1
+}
+
+.social-icon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  display: block;
+  position: relative;
+  z-index: 1
+}
+
+/* ═══ DEV CREDIT ══════════════════════════════════════ */
+#dev {
+  position: fixed;
+  z-index: 30;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 14px);
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, .17);
+  text-transform: uppercase;
+}
+
+#dev a {
+  color: rgba(94, 197, 255, .38);
+  text-decoration: none
+}
+
+#dev a:hover {
+  color: rgba(94, 197, 255, .7)
+}
+
+/* ═══ PHOTO MODAL — Lightbox ══════════════════════════ */
+#modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transition: background .38s, backdrop-filter .38s, -webkit-backdrop-filter .38s;
+}
+
+#modal.open {
+  pointer-events: all;
+  background: rgba(0, 0, 0, .92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+#mImgWrap {
+  position: relative;
+  width: min(88vw, 400px);
+  aspect-ratio: 3/4;
+  transform: scale(.72) translateY(36px);
+  opacity: 0;
+  transition: transform .42s cubic-bezier(.25, .46, .45, .94), opacity .42s;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, .9), 0 0 0 1px rgba(94, 197, 255, .1);
+}
+
+#modal.open #mImgWrap {
+  transform: scale(1) translateY(0);
+  opacity: 1
+}
+
+#mImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Close button — only visible when modal open */
+#mClose {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, .18);
+  background: rgba(0, 0, 0, .55);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: background .2s, transform .15s, opacity .3s;
+}
+
+#mClose svg {
+  width: 16px;
+  height: 16px
+}
+
+#modal.open #mClose {
+  opacity: 1;
+  pointer-events: all
+}
+
+#mClose:hover {
+  background: rgba(255, 255, 255, .15)
+}
+
+#mClose:active {
+  transform: scale(.9)
+}
+
+#mHint {
+  position: absolute;
+  bottom: 28px;
+  font-size: 9px;
+  letter-spacing: 4px;
+  color: rgba(255, 255, 255, .22);
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity .4s .3s;
+  pointer-events: none;
+}
+
+#modal.open #mHint {
+  opacity: 1
+}
+
+/* ═══ RESPONSIVE — Mobile ════════════════════════════ */
+@media(max-width:480px) {
+  #brand {
+    top: 38%
+  }
+
+  .b-name {
+    font-size: clamp(64px, 25vw, 120px)
+  }
+
+  .b-eye {
+    font-size: clamp(4px, 3vw, 11px);
+    letter-spacing: 4px
+  }
+
+  .b-wolf {
+    font-size: clamp(10px, 4.5vw, 18px);
+    letter-spacing: 3px
+  }
+
+  #socials {
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 58px);
+    gap: 12px
+  }
+
+  .sBtn {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px
+  }
+
+  .social-icon {
+    width: 24px;
+    height: 24px
+  }
+
+  #fWrap {
+    bottom: clamp(108px, 24vw, 130px)
+  }
+
+  #mImgWrap {
+    width: min(92vw, 360px)
+  }
+}
+
+@media(max-width:360px) {
+  .b-name {
+    font-size: 20vw
+  }
+
+  .b-eye {
+    font-size: 2vw;
+    letter-spacing: 3px
+  }
+
+  .b-wolf {
+    font-size: 4.5vw;
+    letter-spacing: 2px
+  }
+}

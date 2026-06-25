@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#000000">
+
+  <!-- ═══ SEO ═══════════════════════════════════════ -->
+  <title>ZE'ROo</title>
+  <meta name="description" content="ZE'ROo — Egypt Street King. Drift, Lanos 🇰🇷, 28. @_zewar_28">
+  <meta name="keywords"
+    content="ZEROo, zewar, zewar 28, _zewar_28, لانوس , دريفت, Egypt street king, عمدة المدينة ,احسن لانوس في مصر, Lanos, drift Egypt">
+  <meta name="author" content="ZE'ROo — @_zewar_28">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://zewar.netlify.app/">
+
+  <!-- ═══ Open Graph (Facebook / WhatsApp / Discord) ═ -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zewar.netlify.app/">
+  <meta property="og:title" content="ZE'ROo | عمدة المدينة">
+  <meta property="og:description" content="Egypt Street King • Drift • Lanos 🇰🇷 • 28 — @_zewar_28">
+  <meta property="og:image" content="https://zewar.netlify.app/favicon.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="ar_EG">
+  <meta property="og:site_name" content="ZE'ROo">
+
+  <!-- ═══ Twitter / X Card ══════════════════════════ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ZE'ROo | عمدة المدينة">
+  <meta name="twitter:description" content="Egypt Street King • Drift • Lanos 🇰🇷 • 28">
+  <meta name="twitter:image" content="https://zewar.netlify.app/favicon.png">
+
+  <!-- ═══ Google / Schema.org ═══════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "ZE'ROo",
+    "alternateName": "@_zewar_28",
+    "description": "Egypt Street King • Drift • Lanos • 28",
+    "url": "https://zewar.netlify.app/",
+    "image": "https://zewar.netlify.app/og.jpg",
+    "sameAs": [
+      "https://www.instagram.com/_zewar_28/",
+      "https://www.tiktok.com/@_zewar_28"
+    ]
+  }
+  </script>
+
+  <!-- ═══ Fonts & Styles ════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- SVG Filters -->
+  <svg class="svg-filters" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="liq" x="-10%" y="-10%" width="120%" height="120%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.016 0.020" numOctaves="3" seed="3" result="nz" />
+        <feDisplacementMap in="SourceGraphic" in2="nz" scale="9" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- Video Background -->
+  <div id="vLayer">
+    <video id="bgVid" autoplay muted loop playsinline preload="auto">
+      <source src="zv1.mp4" type="video/mp4">
+    </video>
+    <div id="vOvr"></div>
+  </div>
+
+  <!-- Particles -->
+  <canvas id="pCvs"></canvas>
+
+  <!-- Ghost text -->
+  <div id="ghost28" aria-hidden="true">28</div>
+
+  <!-- Cursor (desktop) -->
+  <div id="cDot"></div>
+  <div id="cRing"></div>
+
+  <!-- Brand -->
+  <div id="brand">
+    <div class="b-scan" aria-hidden="true"></div>
+    <p class="b-eye">🐺 Street King • عمدة المدينة</p>
+    <h1 class="b-name">ZE'<span class="b">ROo</span></h1>
+    <p class="b-wolf">DRIFT &nbsp;•&nbsp; LANOS 🇰🇷 &nbsp;•&nbsp; 28</p>
+    <p class="b-ig">@_zewar_28</p>
+  </div>
+
+  <!-- Gallery Strip -->
+  <div id="fWrap">
+    <div id="fSpot"></div>
+    <div id="fTrack"></div>
+  </div>
+
+  <!-- Social Buttons -->
+  <div id="socials">
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/_zewar_28/" target="_blank" rel="noopener" class="sBtn sIg"
+      aria-label="Instagram">
+      <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#f09433" />
+            <stop offset="25%" style="stop-color:#e6683c" />
+            <stop offset="50%" style="stop-color:#dc2743" />
+            <stop offset="75%" style="stop-color:#cc2366" />
+            <stop offset="100%" style="stop-color:#bc1888" />
+          </linearGradient>
+        </defs>
+        <path fill="url(#ig-grad)"
+          d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+      </svg>
+    </a>
+
+    <!-- TikTok -->
+    <a href="https://www.tiktok.com/@zewar_28?lang=en" target="_blank" rel="noopener" class="sBtn sTt"
+      aria-label="TikTok">
+      <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <!-- TikTok glitch layers -->
+        <path class="tt-cyan" fill="#69C9D0"
+          d="M20.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.72a4.84 4.84 0 01-1-.03z"
+          transform="translate(-1,0)" />
+        <path class="tt-red" fill="#EE1D52"
+          d="M20.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.72a4.84 4.84 0 01-1-.03z"
+          transform="translate(1,0)" />
+        <path fill="#fff"
+          d="M20.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.72a4.84 4.84 0 01-1-.03z" />
+      </svg>
+    </a>
+  </div>
+
+  <!-- Dev Credit -->
+  <div id="dev">
+    Developed by <a href="https://moataz.pages.dev/" target="_blank" rel="noopener"><strong>Moataz
+        ElSayed</strong></a>
+  </div>
+
+  <!-- Photo Modal -->
+  <div id="modal" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <div id="mImgWrap">
+      <img id="mImg" src="" alt="Photo" draggable="false">
+    </div>
+    <button id="mClose" aria-label="Close photo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+    </button>
+    <span id="mHint">SWIPE DOWN OR TAP OUTSIDE TO CLOSE</span>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
