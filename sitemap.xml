@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://zewar.pages.dev/</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+
+    <!-- Bilingual alternates -->
+    <xhtml:link rel="alternate" hreflang="ar-EG" href="https://zewar.pages.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en"    href="https://zewar.pages.dev/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zewar.pages.dev/"/>
+
+    <!-- OG / Hero image -->
+    <image:image>
+      <image:loc>https://zewar.pages.dev/og.jpg</image:loc>
+      <image:title>ZE'ROo — Egypt Street King | عمدة المدينة</image:title>
+      <image:caption>ZE'ROo عمدة المدينة — دريفت، لانوس، مصر | @_zewar_28</image:caption>
+    </image:image>
+
+  </url>
+
+</urlset>

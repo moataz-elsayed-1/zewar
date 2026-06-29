@@ -1,0 +1,15 @@
+# ═══════════════════════════════════════════════════
+#  robots.txt — ZE'ROo | zewar.pages.dev
+#  عمدة المدينة — Egypt Street King
+# ═══════════════════════════════════════════════════
+
+# Allow all crawlers full access
+User-agent: *
+Allow: /
+
+# Block non-essential files from indexing
+Disallow: /style.css
+Disallow: /*.json$
+
+# ═══ Sitemap ════════════════════════════════════════
+Sitemap: https://zewar.pages.dev/sitemap.xml
