@@ -2,69 +2,119 @@
 <html lang="en">
 
 <head>
-  <link rel="icon" type="image/png" href="favicon1.png">
+  <!-- ═══ Charset & Viewport ════════════════════════════════════════════ -->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#000000">
 
-  <!-- ═══ SEO ═══════════════════════════════════════ -->
-  <title>ZE'ROo</title>
-  <meta name="description" content="ZE'ROo — Egypt Street King. Drift, Lanos 🇰🇷, 28. @_zewar_28">
-  <meta name="keywords"
-    content="ZEROo, zewar, zewar 28, _zewar_28, لانوس , دريفت, Egypt street king, عمدة المدينة ,احسن لانوس في مصر, Lanos, drift Egypt">
-  <meta name="author" content="ZE'ROo — @_zewar_28">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://zewar.pages.dev">
+  <!-- ═══ Favicons & Icons ══════════════════════════════════════════════ -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon1.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon1.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon1.png">
+  <link rel="shortcut icon" href="/favicon1.png">
 
-  <!-- ═══ Open Graph (Facebook / WhatsApp / Discord) ═ -->
+  <!-- ═══ SEO Core ══════════════════════════════════════════════════════ -->
+  <title>ZE'ROo | عمدة المدينة — Egypt Street King</title>
+  <meta name="description"
+    content="ZE'ROo عمدة المدينة — ملك شوارع مصر. دريفت، لانوس 🇰🇷، 28 سنة. Egypt's iconic street car content creator. @_zewar_28 على Instagram و TikTok.">
+  <meta name="keywords"
+    content="ZEROo, zewar, zewar 28, _zewar_28, زيوار, لانوس, دريفت مصر, Egypt street king, عمدة المدينة, أحسن لانوس في مصر, Lanos drift, street cars Egypt, سيارات شوارع, drift Egypt, zewar pages dev">
+  <meta name="author" content="ZE'ROo — @_zewar_28">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://zewar.pages.dev/">
+
+  <!-- ═══ Geo & Language ════════════════════════════════════════════════ -->
+  <meta name="geo.region" content="EG">
+  <meta name="geo.placename" content="Egypt">
+  <meta http-equiv="content-language" content="ar-EG, en">
+
+  <!-- ═══ Open Graph — Facebook / WhatsApp / Discord ════════════════════ -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://zewar.pages.dev">
-  <meta property="og:title" content="ZE'ROo | عمدة المدينة">
-  <meta property="og:description" content="Egypt Street King • Drift • Lanos 🇰🇷 • 28 — @_zewar_28">
-  <meta property="og:image" content="https://zewar.pages.dev/favicon1.png">
+  <meta property="og:url" content="https://zewar.pages.dev/">
+  <meta property="og:site_name" content="ZE'ROo">
+  <meta property="og:title" content="ZE'ROo | عمدة المدينة — Egypt Street King">
+  <meta property="og:description"
+    content="عمدة المدينة وملك شوارع مصر • دريفت • لانوس 🇰🇷 • 28 سنة — تابعه على @_zewar_28">
+  <meta property="og:image" content="https://zewar.pages.dev/og.jpg">
+  <meta property="og:image:secure_url" content="https://zewar.pages.dev/og.jpg">
+  <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ZE'ROo — Egypt Street King | عمدة المدينة">
   <meta property="og:locale" content="ar_EG">
-  <meta property="og:site_name" content="ZE'ROo">
+  <meta property="og:locale:alternate" content="en_US">
 
-  <!-- ═══ Twitter / X Card ══════════════════════════ -->
+  <!-- ═══ Twitter / X Card ══════════════════════════════════════════════ -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ZE'ROo | عمدة المدينة">
-  <meta name="twitter:description" content="Egypt Street King • Drift • Lanos 🇰🇷 • 28">
-  <meta name="twitter:image" content="https://zewar.pages.dev/favicon1.png">
+  <meta name="twitter:url" content="https://zewar.pages.dev/">
+  <meta name="twitter:title" content="ZE'ROo | عمدة المدينة — Egypt Street King">
+  <meta name="twitter:description"
+    content="عمدة المدينة وملك شوارع مصر • دريفت • لانوس 🇰🇷 • 28 سنة — @_zewar_28">
+  <meta name="twitter:image" content="https://zewar.pages.dev/og.jpg">
+  <meta name="twitter:image:alt" content="ZE'ROo — Egypt Street King | عمدة المدينة">
+  <meta name="twitter:creator" content="@_zewar_28">
 
-  <!-- ═══ Google / Schema.org ═══════════════════════ -->
+  <!-- ═══ Schema.org — Structured Data ═════════════════════════════════ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "ZE'ROo",
-    "alternateName": "@_zewar_28",
-    "description": "Egypt Street King • Drift • Lanos • 28",
+    "alternateName": ["زيوار", "@_zewar_28", "zewar 28", "ZEROo"],
+    "description": "عمدة المدينة وملك شوارع مصر — Egypt's iconic street car content creator. Drift enthusiast & Lanos legend. 28 سنة.",
     "url": "https://zewar.pages.dev/",
-    "image": "https://zewar.pages.dev/og.jpg",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://zewar.pages.dev/og.jpg",
+      "width": 1200,
+      "height": 630
+    },
+    "nationality": {
+      "@type": "Country",
+      "name": "Egypt"
+    },
     "sameAs": [
       "https://www.instagram.com/_zewar_28/",
       "https://www.tiktok.com/@_zewar_28"
+    ],
+    "knowsAbout": [
+      "Drift",
+      "Street Cars",
+      "Lanos",
+      "Automotive",
+      "Content Creation",
+      "دريفت",
+      "سيارات الشوارع"
     ]
   }
   </script>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HG1CPD895Q"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-HG1CPD895Q');
-</script>
+  <!-- ═══ Google Analytics 4 ════════════════════════════════════════════ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HG1CPD895Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HG1CPD895Q', {
+      'anonymize_ip': true,
+      'send_page_view': true
+    });
+  </script>
 
-  <!-- ═══ Fonts & Styles ════════════════════════════ -->
+  <!-- ═══ Performance: Preconnect & DNS Prefetch ═══════════════════════ -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600&display=swap"
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
+  <!-- ═══ Fonts ══════════════════════════════════════════════════════════ -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600&display=swap"
     rel="stylesheet">
+
+  <!-- ═══ Styles ════════════════════════════════════════════════════════ -->
   <link rel="stylesheet" href="style.css">
 </head>
 
